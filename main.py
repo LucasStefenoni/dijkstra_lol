@@ -32,19 +32,42 @@ for y in range(altura):
                         grafo[(y, x)][(vizinho_y, vizinho_x)] = custo
 
 #Escolhendo início e fim
-inicio_x = int(input("Inicio X:"))
-inicio_y = int(input("Inicio y:"))
+pontos = []
+nome_janela = "Selecionar Pontos"
+img_copia = img.copy()
 
-fim_x = int(input("Escolha o fim x: "))
-fim_y = int(input("Escolha o fim y: "))
+def mouse_callback(event, x, y, flags, params):
+    if event == cv2.EVENT_LBUTTONDOWN and len(pontos) < 2:
+        ponto_yx = (y, x)
+        pontos.append(ponto_yx)
+        if len(pontos) == 1:
+            cv2.circle(img_copia, (x, y), 5, (0, 255, 0), -1)
+        elif len(pontos) == 2:
+            cv2.circle(img_copia, (x, y), 5, (0, 0, 255), -1)
 
-inicio = (inicio_y, inicio_x)
-fim = (fim_y, fim_x)
-if binary_mask[inicio] == 0:
-    print("ERRO: O ponto de início está em um obstáculo!")
-    exit()
-if binary_mask[fim] == 0:
-    print("ERRO: O ponto de fim está em um obstáculo!")
+cv2.namedWindow(nome_janela)
+cv2.setMouseCallback(nome_janela, mouse_callback)
+
+while len(pontos) < 2:
+    cv2.imshow(nome_janela, img_copia)
+    if cv2.waitKey(20) != -1: # Sair
+        print("Seleção cancelada pelo usuário.")
+        pontos = []
+        cv2.destroyAllWindows()
+        exit()
+
+cv2.imshow(nome_janela, img_copia)
+cv2.waitKey(500)
+cv2.destroyAllWindows()
+
+incio, fim = None, None
+
+if len(pontos) == 2:
+    inicio = pontos[0]
+    fim = pontos[1]
+
+if inicio not in grafo or fim not in grafo:
+    print("Área inválida para início ou fim.")
     exit()
 
 #Tabela Custo
@@ -59,7 +82,6 @@ pais = {inicio: None}
 
 #Algoritmo
 processados = set() 
-
 
 #Função do algoritmo
 def menor_custo(custos):
