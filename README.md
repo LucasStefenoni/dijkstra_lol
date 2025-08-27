@@ -1,4 +1,4 @@
-#Calculando o menor caminho com o algoritmo Dijkstra no Summoners Rift em League of Legends
+# Calculando o menor caminho com o algoritmo Dijkstra no Summoners Rift em League of Legends
 
 O projeto consiste em achar o menor caminho entre dois pontos (algo que o LoL já faz naturalmente) e avaliar se o <strong>Blue</strong> ou <strong>Red side</strong> possui vantagem naquele(s) ponto(s). Para o projeto foi usada a linguagem <strong>Python</strong> com <strong>OpenCV</strong> para criar um grafo a partir da imagem do mapa e traçar os caminhos.
 
