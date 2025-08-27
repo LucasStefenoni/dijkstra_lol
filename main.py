@@ -82,36 +82,25 @@ def calculando_caminho(cor,nome):
     processados = set() 
 
     #Função do algoritmo
-    def menor_custo(custos):
-        custo_mais_baixo = float("inf")
-        nodo_custo_mais_baixo = None
-        for nodo in custos:
-            custo = custos[nodo]
-            if custo < custo_mais_baixo and nodo not in processados:
-                custo_mais_baixo = custo
-                nodo_custo_mais_baixo = nodo
-        return nodo_custo_mais_baixo
-
-
-    nodo = menor_custo(custos) 
     fila_prioridade = [(0, inicio)]
     while fila_prioridade:
-        custo_atual, nodo_atual = heapq.heappop(fila_prioridade)
-        if nodo_atual in processados:
+        custo_atual, nodo_atual = heapq.heappop(fila_prioridade) #Pega caminho com menor custo da lista
+        if nodo_atual in processados: #Ver se caminho já foi processado
             continue
         processados.add(nodo_atual)
-        if nodo_atual == fim:
+        if nodo_atual == fim: #Verificar se chegou ao fim
             break
-        vizinhos = grafo.get(nodo_atual, {})
+        vizinhos = grafo.get(nodo_atual, {}) #Pega os vizinhos do nodo atual
         for n_vizinho, peso in vizinhos.items():
             novo_custo = custo_atual + peso
             
-            if n_vizinho not in custos or novo_custo < custos[n_vizinho]:
+            if n_vizinho not in custos or novo_custo < custos[n_vizinho]: #Se o novo custo for menor, atualizar tabelas
                 custos[n_vizinho] = novo_custo
                 pais[n_vizinho] = nodo_atual
                 heapq.heappush(fila_prioridade, (novo_custo, n_vizinho))
 
-    if fim in pais:
+    #Construção do caminho final
+    if fim in pais: 
         caminho_reverso = []
         nodo_atual = fim
         
@@ -136,17 +125,20 @@ def calculando_caminho(cor,nome):
 def programa():
     global img
     aux_img = img.copy()
-    custo_blue = calculando_caminho([255,0,0],"Aliado")
-    custo_red = calculando_caminho([0,0,255],"Inimigo")
+    custo_blue = calculando_caminho([255,0,0],"Aliado") #Calcular caminho azul
+    custo_red = calculando_caminho([0,0,255],"Inimigo") #Calcular caminho vermelho
     cv2.imshow(f' B:{int (custo_blue)} | R:{int (custo_red)}', img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    i = int(input("Deseja calcular outro caminho? 1[Sim] 0[Não]: "))
-    img = aux_img.copy()
+
+    i = int(input("Deseja calcular outro caminho? 1[Sim] 0[Não]: ")) #Calcular novo trajeto ou sair
+    img = aux_img.copy() #Reiniciando a imagem
     if i == 1:
         programa()
     else:
         print("Encerrando...")
         exit()
+
+#Chamando função para início
 programa()
 cv2.destroyAllWindows()
