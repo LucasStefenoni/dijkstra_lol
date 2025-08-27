@@ -6,35 +6,34 @@ O projeto consiste em achar o menor caminho entre dois pontos (algo que o LoL j�
 
 <p>1. Escolhe dois pontos no Mapa abaixo para o time aliado (Blue side)</p>
 <div align="center">
-    <img width="297" height="328" alt="image" src="https://github.com/user-attachments/assets/ba9f944e-01fc-4c5b-afd6-d6f480c788f6" />
+    <img width="297" height="328" alt="image" src="assets/aliado.png" />
 </div>
 
 <p>2. Após isso escolhe mais dois pontos para o time inimigo (Red side)</p>
 <div align="center">
-    <img width="297" height="329" alt="image" src="https://github.com/user-attachments/assets/d0c1310f-90fe-45e3-9149-63d9967ff151" />
+    <img width="297" height="329" alt="image" src="assets/inimigo.png" />
 </div>
 
-<p>3. Com isso aparece o menor caminho e a distância dele (Nesse caso o Red side possui vantagem)</p>
+<p>3. Com isso aparece o menor caminho e a distância dele (Nesse caso o Blue side possui vantagem)</p>
 <div align="center">
-    <img width="300" height="328" alt="image" src="https://github.com/user-attachments/assets/47696ec9-99b9-4e9f-b35e-9e5e6e28e9e7" />
+    <img width="297" height="329" alt="image" src="assets/pontuacao.png" />
 </div>
 
 <h2>Mostrando na prática:</h2>
 
 <strong>Bush do top:</strong>
 <div align="center">
-    <img width="292" height="324" alt="image" src="https://github.com/user-attachments/assets/c1e29ff4-0d63-4cb8-a865-0a713f71ffa1" />
+    <img width="292" height="324" alt="image" src="assets/imagemtestetop.png"/>
 </div>
 
-https://github.com/user-attachments/assets/53ec596f-2cbb-4c82-9d13-2c1e1848be12
+https://github.com/user-attachments/assets/5a9d6850-6299-49b1-b72a-1761995ed551
 
 <strong>Bush do bot:</strong>
 <div align="center">
-    <img width="292" height="324" alt="image" src="https://github.com/user-attachments/assets/c1e29ff4-0d63-4cb8-a865-0a713f71ffa1" />
+    <img width="292" height="324" alt="image" src="assets/imagemtestebot.png"/>
 </div>
 
-https://github.com/user-attachments/assets/567e8c9d-6d91-4772-b7c2-1d72b5a0db30
-
+https://github.com/user-attachments/assets/2f49116b-5b07-45bb-98db-6f6e16212aa3
 
 ---
 
