@@ -33,7 +33,7 @@ https://github.com/user-attachments/assets/5a9d6850-6299-49b1-b72a-1761995ed551
     <img width="292" height="324" alt="image" src="assets/imagemtestebot.png"/>
 </div>
 
-https://github.com/user-attachments/assets/2f49116b-5b07-45bb-98db-6f6e16212aa3
+https://github.com/user-attachments/assets/d2b23bb2-ca68-4948-a071-4e959bf2827c
 
 ---
 
